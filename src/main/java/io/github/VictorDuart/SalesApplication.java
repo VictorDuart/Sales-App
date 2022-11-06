@@ -11,14 +11,6 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class SalesApplication {
 
-    @Bean
-    public CommandLineRunner run(@Autowired ClientRepository repository){
-        return args -> {
-            Client client = Client.builder().cpf("08225024613").name("Victor").build();
-            repository.save(client);
-        };
-    }
-
     public static void main(String[] args) {
         SpringApplication.run(SalesApplication.class, args);
     }

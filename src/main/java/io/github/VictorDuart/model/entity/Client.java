@@ -1,5 +1,6 @@
 package io.github.VictorDuart.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 import org.apache.tomcat.jni.Local;
 
@@ -23,7 +24,8 @@ public class Client {
     @Column(nullable = false, length = 11)
     private String cpf;
 
-    @Column(name = "cadastre_date")
+    @Column(name = "cadastre_date", updatable = false)
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate cadastreDate;
 
     @PrePersist
